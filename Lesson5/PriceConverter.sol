@@ -12,8 +12,8 @@ library PriceConverter {
         
     }
     function getVersion() internal  view returns(uint256) {
-        AggregatorV3Interface versiionFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
-        return versiionFeed.version();
+        AggregatorV3Interface versionFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
+        return versionFeed.version();
     }
     function getDescription() internal  view returns (string memory)  {
          AggregatorV3Interface descriptioneFeed = AggregatorV3Interface(0x694AA1769357215DE4FAC081bf1f309aDC325306);
