@@ -1,3 +1,4 @@
+const { error } = require("console");
 const ethers = require("ethers");
 const fs = require("fs");
 require("dotenv").config();
@@ -14,13 +15,14 @@ async function main() {
   console.log("Deploying our smart contract,please hold for a sec...");
   //We wait till the contract deployed
   //   const contract = await contractFactory.deploy();
-  const contract = await contractFactory.deploy({ gasPrice: 24000000000 });
+  const contract = await contractFactory.deploy();
+  const transactionReciept = await contract.deploymentTransaction.wait(1);
   console.log(contract);
   console.log("worked");
 }
 main()
   .then(() => process.exit(0))
   .catch(() => {
-    console.error("error");
+    console.error(error);
     process.exit(1);
   });
